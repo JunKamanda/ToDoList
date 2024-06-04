@@ -11,7 +11,7 @@ body{
 }
 .container{
     max-width: 900px;
-    width: 70%;
+    width: calc(10vw + 50%);
     height: auto;
     position: absolute;
     top: 50%;
@@ -23,7 +23,7 @@ body{
     border-radius: 20px;
 }
 .container h1{
-    font-size: 3rem;
+    font-size: calc(3vw + 20px);
     color: #db6300;
 }
 .container .inputsTodo{
@@ -39,17 +39,17 @@ body{
 }
 .inputsTodo input:is(:focus, :active){
     color: #db6300;
+    border: 1px solid #db6300;
 }
 .inputsTodo input[type="text"]{
-    width: 30vw;
-    min-width: 400px;
+    width: 100%;
 }
 .inputsTodo input::placeholder{
     color: #db6300;
     font-weight: bold;
 }
 .container .shadow{
-    width: 400px;
+    width: 100%;
     height: auto;
     position: relative;
     left: 50%;
@@ -59,7 +59,7 @@ body{
 }
 .container .ListTodo{
     margin: 20px 0;
-    width: 400px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -67,7 +67,7 @@ body{
 .ListTodo li{
     list-style: none;
     font-weight: 300;
-    font-size: .9rem;
+    font-size: calc(1vw + .6rem);
     text-align: start;
     margin: 0 0 10px;
     cursor: pointer;
@@ -92,3 +92,9 @@ body{
     margin: 0 4px;
     color: red;
 }
+
+/* @media screen and (max-width:585px) {
+    .container{
+        width: 70%;
+    }
+} */
