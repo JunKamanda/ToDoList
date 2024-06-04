@@ -1,9 +1,42 @@
-//créer un form pour taper les todos
-//Ajouter sur le dom ce qui doit être tapé dans l'input à la validation du form
-//Mon Input.value
+// Après Correction de scratch
+const form = document.querySelector("form");
+const ListTodo = document.querySelector("ul.ListTodo");
 
-//Supprimer un todo lorsque l'on click dessus .remove
 
-//Stocker dans le local storage la liste
+// Local storage
+function storeElement(){
+    window.localStorage.todoList = ListTodo.innerHTML;
+}
 
-//Consulter le local storage au lancement de l'application pour rajouter les todos
+function getTodos(){
+    if (window.localStorage.todoList == "") {  
+        ListTodo.innerHTML = `<li>Appuyez pour supprimé</li>`
+    } else {
+        ListTodo.innerHTML = window.localStorage.todoList;
+    }
+}
+
+document.addEventListener("load", getTodos())
+
+// Add todo
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    ListTodo.innerHTML += `<li>${todo.value}</li>`;
+    todo.value = "";
+    storeElement();
+})
+
+// Remove todo
+ListTodo.addEventListener("click", (e)=>{
+    const li = e.target;
+    // li.classList.add("checked");
+    // setTimeout(() => {
+    //     li.remove();
+    // }, 500);
+    if (li.classList.contains("checked")) {
+        li.remove();
+      } else {
+        li.classList.add("checked");
+      }
+    storeElement();
+})

@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    min-height: 100vh;
+    position: relative;
+    background: #8b8b8b75;
+}
+.container{
+    max-width: 900px;
+    width: 70%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px 1px #f1f1f1;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.container h1{
+    font-size: 3rem;
+    color: #db6300;
+}
+.container .inputsTodo{
+    margin: 20px 0;
+}
+.inputsTodo input{
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #f1f1f1;
+    font-size: 1.3rem;
+    color: #db6300;
+    outline: none;
+}
+.inputsTodo input:is(:focus, :active){
+    color: #db6300;
+}
+.inputsTodo input[type="text"]{
+    width: 30vw;
+    min-width: 400px;
+}
+.inputsTodo input::placeholder{
+    color: #db6300;
+    font-weight: bold;
+}
+.container .shadow{
+    width: 400px;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0 0 8px 1px #000077;
+    margin: 0 0 40px;
+}
+.container .ListTodo{
+    margin: 20px 0;
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.ListTodo li{
+    list-style: none;
+    font-weight: 300;
+    font-size: .9rem;
+    text-align: start;
+    margin: 0 0 10px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    position: relative;
+}
+.ListTodo li::before{
+    content: "✽";
+    margin: 0 4px;
+}
+.ListTodo li:hover::after{
+    content: "{Términé}";
+    margin: 0 4px;
+    font-size: .8rem;
+}
+.ListTodo li.checked::before{
+    content: "✔";
+    margin: 0 4px;
+}
+.ListTodo li.checked:hover::after{
+    content: "{Supprimé}";
+    margin: 0 4px;
+    color: red;
+}
